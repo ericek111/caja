@@ -3871,7 +3871,7 @@ is_link_trusted (CajaFile *file,
         res = caja_is_in_system_dir (location);
 
         if (!res) {
-            res = is_trusted_system_desktop_file (location);
+            res = is_trusted_system_desktop_file (location) || caja_is_in_desktop_dir (location);
         }
 
         g_object_unref (location);
